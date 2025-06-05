@@ -18,7 +18,7 @@ This IoT-based data logger monitors temperature and humidity using a DHT11 senso
 2) PROGRAMMING IN EMBEDDED C
 3) Flash Magic
    
-🔑Key Features:
+📈Key Features:
 * Real-time environmental monitoring
 * EEPROM-based persistent storage of threshold values
 * Alerts using buzzer on threshold violation
@@ -26,10 +26,19 @@ This IoT-based data logger monitors temperature and humidity using a DHT11 senso
 * Remote configuration via cloud and local keypad
 * Interrupt-driven user input system
 
+🧩 System Architecture:
+[ Sensors ] --> [ Microcontroller ] --> [ Cloud / Local DB ]
+                                 ↘
+                            [ Threshold Checker ]
+                                 ↘
+                             [ Alert System ]
+                                 ↘
+                           [ Dashboard / Logs ]
 
-Working principle: The system initializes all peripherals (LCD, DHT11, EEPROM, ESP01, keypad, and buzzer).
-Setpoints are read from EEPROM during startup.
 
+🔁Working principle: The system initializes all peripherals (LCD, DHT11, EEPROM, ESP01, keypad, and buzzer).
+
+* Setpoints are read from EEPROM during startup.
 * The DHT11 sensor continuously measures temperature and humidity.
 * These values are compared with the setpoints, and if a threshold is violated:
 * The current value is sent to the Thingspeak cloud.
@@ -37,3 +46,4 @@ Setpoints are read from EEPROM during startup.
 * Every 3 to 5 minutes, the system fetches the latest setpoints from the Thingspeak cloud.
 * If the new setpoint differs from the current EEPROM value, the EEPROM is updated.
 * If a local interrupt is triggered, the user can manually update setpoints using the keypad.
+  
