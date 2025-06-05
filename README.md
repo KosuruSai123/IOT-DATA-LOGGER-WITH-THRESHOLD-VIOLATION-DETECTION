@@ -17,7 +17,14 @@ SOFTWARE REQUIREMENTS:
 2) PROGRAMMING IN EMBEDDED C
 3) Flash Magic
    
-Key Features: Real-time environmental monitoring EEPROM-based persistent storage of threshold values Alerts using buzzer on threshold violation Cloud integration with Thingspeak for data logging Remote configuration via cloud and local keypad Interrupt-driven user input system
+Key Features:
+* Real-time environmental monitoring
+*  EEPROM-based persistent storage of threshold values
+*   Alerts using buzzer on threshold violation
+*   Cloud integration with Thingspeak for data logging
+*    Remote configuration via cloud and local keypad
+*    Interrupt-driven user input system
+
 
 Working principle: The system initializes all peripherals (LCD, DHT11, EEPROM, ESP01, keypad, and buzzer).
 Setpoints are read from EEPROM during startup.
